@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Source Sans Pro', system-ui, sans-serif;
+    @apply bg-neutral-100 dark:bg-[#111] text-neutral-800 dark:text-neutral-300;
+  }
+}
+
+@layer components {
+  h1 {
+    @apply text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-xl font-semibold;
+  }
+}
+
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+}
+
+.headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+
+.headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
+
+body::-webkit-scrollbar {
+  width: 14px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  @apply bg-neutral-600 dark:bg-neutral-400;
+}

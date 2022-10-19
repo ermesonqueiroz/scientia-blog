@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import Headroom from 'react-headroom';
 import { WiDaySunny, WiMoonWaningCrescent4 } from 'react-icons/wi';
@@ -13,9 +14,9 @@ export default function Navbar() {
   return (
     <Headroom
       style={{
-        webkitTransition: 'all .5s ease-in-out',
-        mozTransition: 'all .5s ease-in-out',
-        oTransition: 'all .5s ease-in-out',
+        WebkitTransition: 'all .5s ease-in-out',
+        MozTransition: 'all .5s ease-in-out',
+        OTransition: 'all .5s ease-in-out',
         transition: 'all .5s ease-in-out',
         display: 'flex',
         width: '100%',
@@ -24,7 +25,9 @@ export default function Navbar() {
     >
       <div className="flex w-full bg-neutral-100 h-full dark:bg-[#111] items-center justify-center shadow-lg">
         <div className="flex items-center w-full max-w-7xl xl:px-0 justify-between">
-          <h1 className="text-2xl font-extrabold">WhatCode</h1>
+          <Link href="/">
+            <a className="text-2xl font-extrabold">WhatCode</a>
+          </Link>
 
           <button
             type="button"

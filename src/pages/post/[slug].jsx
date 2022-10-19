@@ -2,10 +2,10 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
-import { getPostBySlug, getAllPosts } from '../src/lib/api';
-import markdownToHtml from '../src/lib/markdownToHtml';
-import { Navbar } from '../src/patterns';
-import markdownStyles from '../styles/markdown-styles.module.css';
+import { getPostBySlug, getAllPosts } from '../../lib/api';
+import markdownToHtml from '../../lib/markdownToHtml';
+import { Navbar } from '../../patterns';
+import markdownStyles from '../../styles/markdown-styles.module.css';
 
 export default function Post({ post }) {
   const router = useRouter();
@@ -24,9 +24,10 @@ export default function Post({ post }) {
         <title>{post.title} | WhatBlog</title>
         <meta property="og:image" content={post.ogImage.url} />
       </Head>
+
       <Navbar />
 
-      <article className="mb-32">
+      <article className="my-32">
         <div className="max-w-2xl mx-auto">
           <div
             className={markdownStyles.markdown}

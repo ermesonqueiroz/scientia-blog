@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from '../src/contexts/theme';
+import { ThemeProvider } from '../contexts/theme';
 import '../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }) {
